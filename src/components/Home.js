@@ -62,7 +62,6 @@ function Home(props) {
         <a onClick={props.deleteNodeHandler}> x</a>
       )}
       <ul>
-        <div>{renderChild()}</div>
         <li>
           <a href="#" onClick={props.addChildHandler}>
             Add child
@@ -79,4 +78,6 @@ export default Home;
 }
 const ConnectedHome = connect(mapStateToProps, actions)(Home);
 export default ConnectedHome;*/
-/*{childIds.map(renderChild(props))}*/
+/*{childIds.map(renderChild(props))}
+{<div>{renderChild}</div>}
+*/
