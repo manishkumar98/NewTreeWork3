@@ -23,7 +23,7 @@ import { getChildrenIds } from "../reducers/reducer";
   const { increment, id } = props;
   increment(id);
 }*/
-/*function renderChild(props) {
+function renderChild(props) {
   console.log(Object.childIds);
   const { childIds, nodeId } = Object;
   return (
@@ -31,7 +31,7 @@ import { getChildrenIds } from "../reducers/reducer";
       <Home nodeId={childIds} parentId={nodeId} />
     </li>
   );
-}*/
+}
 
 function Home(props) {
   console.log(props);
@@ -54,6 +54,7 @@ function Home(props) {
   console.log(props.parentId);
   //console.log(store);
   console.log(props.nodeId);
+  console.log(props.childIds);
   return (
     <>
       <div>Counter:{props.counter}</div>
@@ -62,6 +63,9 @@ function Home(props) {
         <a onClick={props.deleteNodeHandler}> x</a>
       )}
       <ul>
+        {props.childIds && props.childIds.length > 0
+          ? childIds.map(renderChild(props))
+          : "Loading"}
         <li>
           <a href="#" onClick={props.addChildHandler}>
             Add child
